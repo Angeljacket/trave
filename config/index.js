@@ -7,10 +7,17 @@ const path = require('path')
 module.exports = {
   dev: {
 
-    // Paths
+    // Paths 在proxyTable属性了改变了一下，把读取到的api数据放到mock里
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        target: 'http://localhost:8080',
+        pathRewrite: {
+          '^/api': '/static/mock'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
