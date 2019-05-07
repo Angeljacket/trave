@@ -3,17 +3,17 @@
   <h3 class="mp-title">
     看了该景点的人还看了
   </h3>
-  <div class="mp-list">
+  <div class="mp-list" v-for="(item, index) of look" :key="index">
     <a href="//touch.piao.qunar.com/touch/detail.htm?id=2637958213&amp;cat=from_area%3Das_recommend_sight" mp-role="sightLink">
       <div class="mp-recommend-item">
-        <img class="mp-recommend-img" mp-role="lazyLoadImg" data-original-src="http://img1.qunarzz.com/sight/p0/1707/88/889ae02b07140066a3.img.jpg_228x168_030363bb.jpg" src="http://img1.qunarzz.com/sight/p0/1707/88/889ae02b07140066a3.img.jpg_228x168_030363bb.jpg" style="">
-        <div class="mp-recommend-info mp-border-bottom"><div class="mp-recommend-sight">长隆欢乐世界<span class="mp-recomment-sightstar">(5A)</span></div>
-          <div class="mp-recommend-price mp-price">¥<em class="mp-price-num">171.4</em><span class="mp-recommend-flag">起</span></div>
+        <img class="mp-recommend-img" :src="item.lookImgs" />
+        <div class="mp-recommend-info mp-border-bottom"><div class="mp-recommend-sight">{{item.lookTitle}}<span class="mp-recomment-sightstar">{{item.lookSig}}</span></div>
+          <div class="mp-recommend-price mp-price">¥<em class="mp-price-num">{{item.lookPrice}}</em><span class="mp-recommend-flag">起</span></div>
           <div class="mp-recommend-comment">
-            <span class="mp-recommend-commentnum">54156条评论</span>
+            <span class="mp-recommend-commentnum">{{item.lookPinglun}}</span>
           </div>
           <div class="mp-recommend-position">
-      <span class="mp-recommend-subposition mp-border-left">广州·广州长隆旅游度假区</span>
+      <span class="mp-recommend-subposition mp-border-left">{{item.lookWhere}}</span>
     </div>
     </div>
     </div></a>
@@ -25,7 +25,7 @@
 export default {
   name: 'DetailRecommend',
   props: {
-    list: Array
+    look: Array
   }
 }
 </script>
@@ -33,7 +33,6 @@ export default {
 <style lang="stylus" scoped>
   .mp-container
     margin-top: .6rem
-    margin-bottom: 1.2rem
     position: relative
   .mp-container::before
     border-color: #dadada
@@ -113,4 +112,10 @@ export default {
     bottom 0
     color: #9e9e9e;
     font-size: .24rem;
+  .mp-price
+    font-size: .8rem
+  .mp-price-num
+    font-size: 1.2rem
+  .mp-recommend-flag
+    color: #9e9e9e
 </style>

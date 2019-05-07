@@ -4,7 +4,8 @@
       周末去哪儿
     </div>
     <ul>
-      <li class="item border-bottom" v-for="item of list" :key="item.id">
+      <router-link tag="li" :to="'/xetail/' + item.id"
+                   class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
          <img :src='item.imgUrl' class="item-img" />
         </div>
@@ -12,7 +13,7 @@
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>

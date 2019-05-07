@@ -38,7 +38,10 @@ export default {
         pagination: '.swiper-pagination',
         paginationType: 'fraction',
         observeParents: true,
-        observer: true
+        observer: true,
+        notNextTick: true,
+        init: false,
+        initialSlide: 0
       }
     }
   },
@@ -50,11 +53,9 @@ export default {
   watch: {
     imgs (val) {
       this.swiperOptions.initialSlide = val.index
-      console.log(this.swiperOptions.initialSlide)
+      // console.log(this.swiperOptions.initialSlide)
+      // console.log(val.index)
     }
-  },
-  beforeDestroy () {
-    console.log(1)
   }
 }
 </script>

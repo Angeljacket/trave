@@ -23,7 +23,7 @@
     </div>
     <fade>
       <!--<common-gallaru :imgs="imgs" v-show="showGallary" @close="onceGallaryClose"></common-gallaru>-->
-      <common-gallaru :imgs="(currentImg) ? currentImg : {}" v-show="showGallary" @close="onceGallaryClose"></common-gallaru>
+      <common-gallaru :imgs="(currentImg) ? currentImg : {}" v-if="showGallary" @close="onceGallaryClose"></common-gallaru>
     </fade>
   </div>
 </template>
@@ -52,7 +52,9 @@ export default {
       this.showGallary = false
     },
     sendImg (imgs, index) {
+      console.log(index)
       this.currentImg = {imgs, index}
+      // this.swiperOptions.initialSlide = index
     }
   },
   components: {

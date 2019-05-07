@@ -14,7 +14,7 @@
             ></detail-basinfo>
             <detail-list :list="item.categoryList"></detail-list>
             <detail-usertell :tell="item.tell" :imgs="item.theImgs"></detail-usertell>
-            <detail-recommend></detail-recommend>
+            <detail-recommend :look="item.look"></detail-recommend>
           </div>
         </div>
       </div>

@@ -1,7 +1,12 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <div class="iconfont basize">&#xe6a4;</div>
+      <div class="basize">
+        <a href="//touch.qunar.com/h5/user/login">登录</a>
+        <!--<router-link tag="a" to="/login">-->
+          <!--登录-->
+        <!--</router-link>-->
+      </div>
     </div>
     <div class="header-input">
       <div class="axs">
@@ -44,7 +49,10 @@ a
   width:1.85rem
   float: left
 .basize
-  font-size:1.5rem
+  margin-left: 3px
+  font-size: .8rem
+.basize a
+  color: #fff
  .header-input
    flex: 1
    background:#fff

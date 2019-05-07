@@ -1,6 +1,5 @@
   <template>
   <div class="footer">
-   <div class="fonts"><span class="iconfont">&#xe623;</span>票面价是指通过景区指定窗口售卖的纸质门票上标注的价格</div>
    <div class="main_nav_wrapper">
      <ul class="main_nav" :class="{'taller':isChoose}">
        <li class="flight"><span class="iconfont">&#xe70e;</span><a href="#" class="title">机票</a></li>
@@ -65,22 +64,11 @@ export default {
   a
     text-decoration: none
   .footer
-   background: #f3f3f3
-   height: auto
-   overflow: hidden
- .fonts
-   height: 1.4rem
-   font-size: .78rem
-   margin-top: .37rem
-   padding-left: .3rem
-   padding: .14rem .1rem
-   line-height: 1.4rem
-   color: #616161
-   background: #fff
-  .fonts span
-    font-size: .5rem
-    margin-right: .2rem
-    padding-left: .3rem
+    padding-top: .6rem
+    margin-top: .5rem
+    background: #f3f3f3
+    height: auto
+    overflow: hidden
  .main_nav
    position: relative
    width: 17.5rem
